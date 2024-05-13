@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -5,43 +6,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - «СЛЕСАРЬ ПЛЮС» Ключи | Автоключи | Заточка</title>
-    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/styles.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
     <style>
-   .navbar-brand {
-    width: auto; /* Использовать автоматическую ширину */
-    max-width: 150px; /* Ограничить максимальную ширину */
-    overflow: hidden; /* Скрывать излишки */
-    text-overflow: ellipsis; /* Добавить многоточие при переполнении */
-}  
-   .navbar-brand {
-    padding: 5px; /* Уменьшение внутреннего отступа */
-    margin: 0; /* Убрать все внешние отступы */
-}
-   .navbar-right {
-    display: flex; /* Использовать Flexbox */
-    justify-content: flex-end; /* Прижать элементы к правому краю */
-}
-   .navbar-right a {
-    margin-left: 20px;  /* Увеличение отступа слева */
-    margin-right: 20px; /* Увеличение отступа справа */
-}
+        .navbar-brand {
+            width: auto; /* Использовать автоматическую ширину */
+            max-width: 150px; /* Ограничить максимальную ширину */
+            overflow: hidden; /* Скрывать излишки */
+            text-overflow: ellipsis; /* Добавить многоточие при переполнении */
+        }
 
-.navbar-nav {
-    display: inline-block; /* Позволяет использовать `inline`-стили для выравнивания */
-}
-         .logo {
-        width: 50px; /* ширина */
-        height: auto; 
-    }
+        .navbar-brand {
+            padding: 5px; /* Уменьшение внутреннего отступа */
+            margin: 0; /* Убрать все внешние отступы */
+        }
+
+        .navbar-right {
+            display: flex; /* Использовать Flexbox */
+            justify-content: flex-end; /* Прижать элементы к правому краю */
+        }
+
+            .navbar-right a {
+                margin-left: 20px; /* Увеличение отступа слева */
+                margin-right: 20px; /* Увеличение отступа справа */
+            }
+
+        .navbar-nav {
+            display: inline-block; /* Позволяет использовать `inline`-стили для выравнивания */
+        }
+
+        .logo {
+            width: 50px; /* ширина */
+            height: auto;
+        }
         /* Стили для меню сайта */
         .navbar-inverse {
             background-color: #333333; /* темно-секрый цвет фона навигационной панели */
             border-color: #333333;
         }
+
             .navbar-inverse .navbar-nav > li > a {
                 color: #F0FFFF; /*  цвет текста меню */
             }

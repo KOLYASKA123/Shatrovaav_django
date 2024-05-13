@@ -22,10 +22,10 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/index.html',
+        'index.html',
         {
-              'title':'Главная',
-            'year':datetime.now().year,
+            'title': 'Главная',
+            'year': datetime.now().year,
         }
     )
 
@@ -34,7 +34,7 @@ def contact(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/contact.html',
+        'contact.html',
         {
            'title':'Контакты',
            'message':'Страница с нашими контактами.',
@@ -47,7 +47,7 @@ def about(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/about.html',
+        'about.html',
         {
             'title':'О нас',
             'message':'Сведения о нас',
@@ -59,9 +59,10 @@ def links(request):
     assert isinstance(request, HttpRequest)
     return render(
          request, 
-        'app/links.html',
-       {'title':'Полезные ресурсы',
-        'year':datetime.now().year, 
+        'links.html',
+       {
+           'title': 'Полезные ресурсы',
+           'year': datetime.now().year,
        }
     )
 def feedback(request):
@@ -70,13 +71,13 @@ def feedback(request):
         form = FeedbackForm(request.POST)
         if form.is_valid():
             # Если форма валидна, обработка данных отзыва
-            return render(request, 'app/success.html', {'form': form})
+            return render(request, 'success.html', {'form': form})
     else:
         form = FeedbackForm() 
-    return render(request, 'app/feedback.html', {'form': form})
+    return render(request, 'feedback.html', {'form': form})
 def success_view(request):
     """Render a success page."""
-    return render(request, 'app/success.html')
+    return render(request, 'success.html')
 
 def registration(request): 
     """Renders the registration page.""" 
@@ -96,7 +97,7 @@ def registration(request):
     assert isinstance(request, HttpRequest)
     return render(
         request, 
-        'app/registration.html',
+        'registration.html',
         {
             'regform': regform,     # передача формы в шаблон веб-страницы
             'year':datetime.now().year,
@@ -108,7 +109,7 @@ def blog(request):
     posts = Blog.objects.all() # запрос на выбор всех статей блога из модели
     return render(
         request,
-        'app/blog.html',
+        'blog.html',
         {
          'title':'Блог',
          'posts': posts, # передача списка статей в шаблон веб-страницы
@@ -133,7 +134,7 @@ def blogpost(request, parametr):
         form = CommentForm()  # создание формы для ввода комментария
     return render(
               request,
-              'app/blogpost.html',
+              'blogpost.html',
               {
                   'post_1': post_1,  # передача конкретной статьи в шаблон веб-страницы
                   'comments': comments,  # передача комментариев в шаблон веб-страницы
@@ -163,7 +164,7 @@ def newpost(request):
             
     return render(
         request,
-        'app/newpost.html',
+        'newpost.html',
         { 
             'blogform': blogform, # передача формы в шаблон веб-страницы
             'title': 'Добавить статью блога',
@@ -176,7 +177,7 @@ def videopost(request):
     # Добавьте код здесь для обработки запроса и рендеринга страницы videopost
     return render(
         request,
-        'app/videopost.html',
+        'videopost.html',
         {
             'title': 'Видеостатья',
             'message': 'Это видеостатья.',
